@@ -20,10 +20,6 @@ function getRepoContributors(repoOwner, repoName, cb) {
         .on('error', function(err) {
           throw err;
         })
-        .on('response', function(response) {
-          console.log('Response Status: ', response.statusMessage);
-          console.log('Response Header: ', response.headers['content-type']);
-        })
         .pipe(fs.createWriteStream(filePath));
   }
 
