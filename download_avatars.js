@@ -34,7 +34,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
     cb(err, data);
 
     data.forEach(function(keys) {
-      console.log(keys.avatar_url);
+      console.log(keys.avatar_url, 'avatar/' + keys.login + '.jpg');
     });
 
   });
