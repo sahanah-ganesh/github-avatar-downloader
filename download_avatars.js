@@ -8,7 +8,7 @@ console.log('Welcome to the GitHub Avatar Downloader!');
 
 function getRepoContributors(repoOwner, repoName, cb) {
   var options = {
-    url: "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/contributors",
+    url: 'https://api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors',
     headers: {
       'User-Agent': 'request',
       'Authorization' : 'token ' + secrets.GITHUB_TOKEN
@@ -29,7 +29,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
 
 
   request(options, function(err, res, body) {
-    var data = JSON.parse(body)
+    var data = JSON.parse(body);
 
     cb(err, data);
 
@@ -42,9 +42,9 @@ function getRepoContributors(repoOwner, repoName, cb) {
 
 getRepoContributors(input[0], input[1], function(err, result) {
   if (!input[0] && !input[1]) {
-    throw err;
+    console.log('Please enter two values for repoOwner and repoName!');
   };
-  console.log("Errors:", err);
-  console.log("Result:", result);
+  console.log('Errors:', err);
+  console.log('Result:', result);
 
 });
